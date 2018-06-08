@@ -1,0 +1,38 @@
+<script>
+function User(name,email) {
+        this.name = name;
+        this.email = email;
+        this.cartAmount = [];
+        this.total = 0;
+}
+User.prototype = {
+        constructor: User,
+
+        addCart: function(mrp){
+            this.cartAmount.push(mrp);
+        },
+
+        changeEmail: function(newmail){
+            this.email = newmail;
+        },
+
+        showCart: function() {
+            var cart = this.cartAmount.length >0 ? this.cartAmount.join("tk,") : "No product in the cart";
+            return this.name+" has "+cart+" in his cart.";
+        },
+  athar.changeEmail("atharjamil@yahoo.com");
+    console.log(athar.email);
+    athar.addCart(20);
+    athar.addCart(50);
+    athar.addCart(80);
+    console.log(athar.intotal());
+        intotal: function(){
+            for(var n in this.cartAmount){
+                this.total += this.cartAmount[n];
+                return this.total;
+            }
+        }
+    };
+    athar= new User("Athar Jamil", "atharjamil@gmail.com");
+    console.log(athar.name);
+</script>
