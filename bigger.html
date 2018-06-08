@@ -1,0 +1,12 @@
+<script>
+
+function BiggerElements(val)
+   {
+     return function(evalue, index, array)
+     {
+     return (evalue >= val);
+     };
+   }
+var result = [30,40,98,34,1]. filter(BiggerElements(10));
+document.writeln(result);
+</script>
